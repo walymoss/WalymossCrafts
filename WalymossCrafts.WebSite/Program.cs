@@ -1,3 +1,5 @@
+using System.Text.Json;
+using WalymossCrafts.WebSite.Models;
 using WalymossCrafts.WebSite.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -24,5 +26,12 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapRazorPages();
+app.MapGet("/products", (JsonFileProductService productService) =>
+{
+    var products = productService.GetProducts();
+    var json = JsonSerializer.Serialize<IEnumerable<Product>>(products);
+    return Results.Ok(json);
+});
+
 
 app.Run();
