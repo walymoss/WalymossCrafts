@@ -26,7 +26,7 @@ namespace WalymossCrafts.WebSite.Services
 
         public void AddRating(string productId, int rating)
         {
-            var products = GetProducts();
+            IEnumerable<Product> products = GetProducts();
 
             if (products.First(x => x.Id == productId).Ratings == null)
             {
