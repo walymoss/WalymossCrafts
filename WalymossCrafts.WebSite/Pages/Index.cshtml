@@ -1,4 +1,5 @@
 ﻿@page
+@using WalymossCrafts.WebSite.Components;
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
@@ -9,21 +10,6 @@
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
 
-<!-- Grid container -->
-<div class="container">
-    <!-- Grid row -->
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-        @foreach (var product in Model.Products)
-        {
-            <!-- Grid column -->
-            <div class="col">
-                <div class="card h-100">
-                    <img src="@product.Image" class="card-img-top" alt="@product.Title">
-                    <div class="card-body">
-                        <h5 class="card-title">@product.Title</h5>
-                    </div>
-                </div>
-            </div>
-        }
-    </div>
-</div>
+
+@(await Html.RenderComponentAsync<ProductList>(RenderMode.ServerPrerendered))
+<script src="_framework/blazor.server.js"></script>
