@@ -3,7 +3,7 @@
 @using WalymossCrafts.WebSite.Models
 @inject JsonFileProductService ProductService
 
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- Grid container -->
 <div class="container">
     <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -48,7 +48,27 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <!-- Botones del pie de página del modal, si los necesitas -->
+                    @if (voteCount == 0)
+                    {
+                        <span>Be the first to vote!</span>
+                    }
+                    else
+                    {
+                        <span>@voteCount @voteLabel</span>
+                    }
+                    @for (int i = 1; i <= 5; i++)
+                    {
+                        if (i <= currentRating)
+                        {
+                            <span class="fa fa-star checked" @onclick="(e => SubmitRating(i))"></span>
+                        }
+                        else
+                        {
+                            <span class="fa fa-star" @onclick="(e => SubmitRating(i))"></span>
+                        }
+                    }
+
+
                 </div>
             </div>
         </div>
@@ -65,7 +85,37 @@
         selectedProductId = productId;
         selectedProduct = ProductService.GetProducts().First(x => x.Id == productId);
         IsModalVisible = true;
+        GetCurrentRating();
     }
+
+    double currentRating = 0;
+    int voteCount = 0;
+    string voteLabel;
+
+    void GetCurrentRating()
+    {
+        if (selectedProduct.Ratings == null || !selectedProduct.Ratings.Any())
+        {
+            currentRating = 0;
+            voteCount = 0;
+        }
+        else
+        {
+            voteCount = selectedProduct.Ratings.Count();
+            voteLabel = voteCount > 1 ? "Votes" : "Vote";
+            currentRating = selectedProduct.Ratings.Average();
+        }
+        Console.WriteLine($"Current rating for {selectedProduct.Id}: {currentRating}");
+    }
+
+    void SubmitRating(int rating)
+    {
+        Console.WriteLine($"Rating received for {selectedProduct.Id}: {rating}");
+        ProductService.AddRating(selectedProductId, rating);
+        GetCurrentRating();
+        StateHasChanged(); // Agrega esto para asegurarte de que la interfaz se actualice
+    }
+
 
     void CloseModal()
     {

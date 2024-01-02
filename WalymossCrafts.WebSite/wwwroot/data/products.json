@@ -29,7 +29,14 @@
     "Url": "https://www.hackster.io/agent-hawking-1/bling-your-laptop-with-an-internet-connected-light-show-30e4db",
     "Title": "Bling your Laptop with an Internet-Connected Light Show",
     "Description": "Create a web-connected light-strip API controllable from your website, using the Particle.io.",
-    "Ratings": null
+    "Ratings": [
+      2,
+      1,
+      2,
+      3,
+      6,
+      6
+    ]
   },
   {
     "Id": "jenlooper-survival",
@@ -38,7 +45,9 @@
     "Url": "https://www.hackster.io/agent-hawking-1/create-a-compact-survival-kit-38bfdb",
     "Title": "Create a Compact Survival Kit with LED Track Lighting",
     "Description": "Use an Altoids tin with Chibitronics sticker LEDs to create a light-up compact that doubles as a survival kit for the young hipster",
-    "Ratings": null
+    "Ratings": [
+      6
+    ]
   },
   {
     "Id": "sailorhg-bubblesortpic",
@@ -47,7 +56,9 @@
     "Url": "https://twitter.com/sailorhg/status/1090107740049952770",
     "Title": "Bubblesort Visualization",
     "Description": "Visualization of sailor scouts sorted by bubblesort algorithm by their planet\u0027s distance from the sun",
-    "Ratings": null
+    "Ratings": [
+      2
+    ]
   },
   {
     "Id": "sailorhg-corsage",
@@ -56,7 +67,14 @@
     "Url": "https://twitter.com/sailorhg/status/1090113666911891456",
     "Title": "Light-up Corsage",
     "Description": "Light-up corsage I made with my summer intern.",
-    "Ratings": null
+    "Ratings": [
+      6,
+      6,
+      6,
+      6,
+      6,
+      6
+    ]
   },
   {
     "Id": "sailorhg-kit",
@@ -65,7 +83,10 @@
     "Url": "https://twitter.com/sailorhg/status/1090122822007963648",
     "Title": "Pastel hardware kit",
     "Description": "Pastel hardware kits complete with custom manufactured pastel alligator clips.",
-    "Ratings": null
+    "Ratings": [
+      6,
+      6
+    ]
   },
   {
     "Id": "sailorhg-led",
@@ -83,7 +104,16 @@
     "Url": "https://www.instagram.com/p/BNvESj-j8PI/",
     "Title": "Black Sweatshirt",
     "Description": "Black sweatshirt hoody with the Sick of the Internet logo.",
-    "Ratings": null
+    "Ratings": [
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6
+    ]
   },
   {
     "Id": "selinazawacki-soi-pins",
